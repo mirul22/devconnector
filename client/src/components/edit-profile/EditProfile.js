@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-import isEmpty from "../../validation/is-empty";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import InputGroup from "../common/InputGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import { createProfile, getCurrentProfile } from "../../actions/profileActions";
+import isEmpty from "../../validation/is-empty";
 
 class CreateProfile extends Component {
   constructor(props) {
@@ -135,32 +135,36 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             error={errors.twitter}
           />
+
           <InputGroup
-            placeholder="Facebook Profile URL"
+            placeholder="Facebook Page URL"
             name="facebook"
             icon="fab fa-facebook"
             value={this.state.facebook}
             onChange={this.onChange}
             error={errors.facebook}
           />
+
           <InputGroup
-            placeholder="LinkedIn Profile URL"
+            placeholder="Linkedin Profile URL"
             name="linkedin"
             icon="fab fa-linkedin"
             value={this.state.linkedin}
             onChange={this.onChange}
             error={errors.linkedin}
           />
+
           <InputGroup
-            placeholder="Youtube Profile URL"
+            placeholder="YouTube Channel URL"
             name="youtube"
             icon="fab fa-youtube"
             value={this.state.youtube}
             onChange={this.onChange}
             error={errors.youtube}
           />
+
           <InputGroup
-            placeholder="Instagram Profile URL"
+            placeholder="Instagram Page URL"
             name="instagram"
             icon="fab fa-instagram"
             value={this.state.instagram}
@@ -175,8 +179,8 @@ class CreateProfile extends Component {
     const options = [
       { label: "* Select Professional Status", value: 0 },
       { label: "Developer", value: "Developer" },
-      { label: "Junior Developer", value: "Junior  Developer" },
-      { label: "Senior Developer", value: "Senior  Developer" },
+      { label: "Junior Developer", value: "Junior Developer" },
+      { label: "Senior Developer", value: "Senior Developer" },
       { label: "Manager", value: "Manager" },
       { label: "Student or Learning", value: "Student or Learning" },
       { label: "Instructor or Teacher", value: "Instructor or Teacher" },
@@ -234,7 +238,7 @@ class CreateProfile extends Component {
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                  info="city or state suggested (eg. Kuala Lumpur, Damansara)"
+                  info="City or city & state suggested (eg. Boston, MA)"
                 />
                 <TextFieldGroup
                   placeholder="* Skills"
@@ -242,7 +246,8 @@ class CreateProfile extends Component {
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
-                  info="Please use comma ',' seperated values (eg. HTML,CSS,Javascript,PHP,C#,React)"
+                  info="Please use comma separated values (eg.
+                    HTML,CSS,JavaScript,PHP"
                 />
                 <TextFieldGroup
                   placeholder="Github Username"
@@ -250,7 +255,7 @@ class CreateProfile extends Component {
                   value={this.state.githubusername}
                   onChange={this.onChange}
                   error={errors.githubusername}
-                  info="If you want your latest repos and Github link, include your username"
+                  info="If you want your latest repos and a Github link, include your username"
                 />
                 <TextAreaFieldGroup
                   placeholder="Short Bio"
@@ -260,6 +265,7 @@ class CreateProfile extends Component {
                   error={errors.bio}
                   info="Tell us a little about yourself"
                 />
+
                 <div className="mb-3">
                   <button
                     type="button"
@@ -272,7 +278,7 @@ class CreateProfile extends Component {
                   >
                     Add Social Network Links
                   </button>
-                  <span className="text-muted ml-2">Optional</span>
+                  <span className="text-muted">Optional</span>
                 </div>
                 {socialInputs}
                 <input
