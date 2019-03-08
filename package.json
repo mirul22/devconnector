@@ -4,6 +4,7 @@
   "description": "Social Network for Developers",
   "main": "server.js",
   "engines": {
+    "npm": "6.4.1",
     "node": "10.15.0"
   },
   "scripts": {
